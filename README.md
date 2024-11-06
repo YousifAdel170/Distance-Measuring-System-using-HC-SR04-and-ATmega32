@@ -1,44 +1,35 @@
 # Distance Measuring System using HC-SR04 and ATmega32
-
-## This project implements a distance measurement system using the HC-SR04 Ultrasonic Sensor and ATmega32 Microcontroller. The measured distance is displayed on a 4x16 LCD. The system is designed with a layered architecture that includes drivers for GPIO, ICU, LCD, and Ultrasonic Sensor.
+This project implements a distance measurement system using the HC-SR04 Ultrasonic Sensor and ATmega32 Microcontroller. 
+The measured distance is displayed on a 4x16 LCD. The system is designed with a layered architecture that includes drivers for GPIO, ICU, LCD, and Ultrasonic Sensor.
 
 ## Features
 
 ### Ultrasonic Distance Measurement:
-
-#### Uses the HC-SR04 Ultrasonic Sensor to measure distances in centimeters.
+Uses the HC-SR04 Ultrasonic Sensor to measure distances in centimeters.
 
 ### LCD Display:
-
-#### Displays the measured distance on a 4x16 LCD.
+Displays the measured distance on a 4x16 LCD.
 
 ### ATmega32 Microcontroller:
-
-#### Runs the system at a clock frequency of 8 MHz.
+Runs the system at a clock frequency of 8 MHz.
 
 ### Layered Architecture:
-
-#### The project is implemented using a modular design with separate drivers for each component.
+The project is implemented using a modular design with separate drivers for each component.
 
 ## System Architecture
+The system is organized based on a layered architecture model and includes the following drivers:
 
-### The system is organized based on a layered architecture model and includes the following drivers:
+### GPIO Driver:
+Controls the input and output pins, including those for the LCD and the ultrasonic sensor.
 
-#### GPIO Driver:
+### ICU Driver:
+Handles the timing for ultrasonic sensor readings using the Input Capture Unit.
 
-##### Controls the input and output pins, including those for the LCD and the ultrasonic sensor.
+### LCD Driver:
+Manages communication with the 4x16 LCD.
 
-#### ICU Driver:
-
-##### Handles the timing for ultrasonic sensor readings using the Input Capture Unit.
-
-#### LCD Driver:
-
-##### Manages communication with the 4x16 LCD.
-
-#### Ultrasonic Sensor Driver:
-
-##### Controls the HC-SR04 sensor to trigger pulses and measure the echo time to calculate distance.
+### Ultrasonic Sensor Driver:
+Controls the HC-SR04 sensor to trigger pulses and measure the echo time to calculate distance.
 
 ## Components
 
