@@ -75,13 +75,13 @@ Controls the HC-SR04 sensor to trigger pulses and measure the echo time to calcu
 
 ## Requirements
 
-### ATmega32 Microcontroller
+ATmega32 Microcontroller
 
-### HC-SR04 Ultrasonic Sensor
+HC-SR04 Ultrasonic Sensor
 
-### 4x16 LCD
+4x16 LCD
 
-### C programming language for the firmware
+C programming language for the firmware
 
 ## License
 
