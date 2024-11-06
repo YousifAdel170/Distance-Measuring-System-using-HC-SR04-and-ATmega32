@@ -1,0 +1,52 @@
+/*
+ ================================================================================================
+ Name        : measure_distance_application.c
+ Author      : Yousif Adel
+ Description : Measure the distance using Ultrasonic sensor
+ ================================================================================================
+ */
+#include "lcd.h"
+#include "ultrasonic.h"
+#include <avr/io.h> /* To use the SREG register */
+
+/* Create configuration structure for ICU driver */
+ICU_ConfigType ICU_Configurations = {F_CPU_8,RAISING};
+
+int main(void)
+{
+
+	/* create variable to store the distance that sensor get it*/
+	uint16 distance = 0;
+
+	/* Initialize the ultrasonic sensor and ICU driver */
+	Ultrasonic_init();
+
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+
+	/* Initialize the LCD driver */
+	LCD_init();
+	while(1)
+	{
+
+
+		LCD_moveCursor(0, 1);
+
+		LCD_displayString("Distance= ");
+
+		if(Ultrasonic_readDistance()>100)
+
+		{
+			LCD_integerToString(Ultrasonic_readDistance());
+		}
+		else
+		{
+			LCD_integerToString(Ultrasonic_readDistance());
+
+			LCD_displayCharacter(' ');
+		}
+		LCD_displayString("cm");
+
+		_delay_ms(100);
+	}
+}

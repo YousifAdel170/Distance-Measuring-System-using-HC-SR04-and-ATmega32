@@ -1,0 +1,43 @@
+02:08:04 **** Incremental Build of configuration Debug for project mini_project4 ****
+make all 
+Building file: ../measure_distace_application.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"measure_distace_application.d" -MT"measure_distace_application.o" -c -o "measure_distace_application.o" "../measure_distace_application.c"
+In file included from ../measure_distace_application.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../measure_distace_application.c
+ 
+Building file: ../ultrasonic.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ultrasonic.d" -MT"ultrasonic.o" -c -o "ultrasonic.o" "../ultrasonic.c"
+In file included from ../ultrasonic.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ultrasonic.c
+ 
+Building target: mini_project4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mini_project4.map -mmcu=atmega32 -o "mini_project4.elf"  ./gpio.o ./icu.o ./lcd.o ./measure_distace_application.o ./ultrasonic.o   
+Finished building target: mini_project4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mini_project4.elf  >"mini_project4.lss"
+Finished building: mini_project4.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mini_project4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9990 bytes (30.5% Full)
+(.text + .data + .bootloader)
+
+Data:        289 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+02:08:05 Build Finished. 0 errors, 2 warnings. (took 1s.441ms)
+
